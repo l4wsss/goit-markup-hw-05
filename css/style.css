@@ -204,10 +204,6 @@ button:focus {
 }
 
 /* About us */
-.about-us {
-  padding: 120px 0;
-}
-
 .about-us-container {
   display: flex;
   flex-wrap: wrap;
@@ -237,6 +233,7 @@ button:focus {
 
 /* We doing */
 .we-doing {
+  padding-top: 0;
   padding-bottom: 120px;
 }
 .we-doing-title {
@@ -351,14 +348,17 @@ footer .logo-white {
 }
 
 /*================ Portfolio.html ==============*/
+.portfolio-section {
+  padding-top: 96px;
+}
+
 /* Buttons */
 .filters-item {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 24px;
+  gap: var(--main-gap);
   justify-content: center;
-  margin-top: -26px;
   margin-bottom: 72px;
 }
 
@@ -398,19 +398,21 @@ button:focus {
 
   display: flex;
   flex-wrap: wrap;
-  margin-left: -24px;
-  margin-top: -48px;
+  margin-left: calc(-1 * var(--main-gap));
+  margin-top: calc(-1 * var(--second-gap));
 }
 
 .portfolio-item {
   flex-basis: calc(100% / 3 - 24px);
-  margin-left: 24px;
-  margin-top: 48px;
+  margin-left: var(--main-gap);
+  margin-top: var(--second-gap);
 }
 
 .portfolio-item-card {
   background: var(--white);
   border-bottom: 1px solid var(--accent);
+  box-shadow: 0px 1px 6px rgb(46 47 66 / 8%), 0px 1px 1px rgb(46 47 66 / 16%),
+    0px 2px 1px rgb(46 47 66 / 8%);
 }
 
 .portfolio-item-content {
