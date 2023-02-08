@@ -8,6 +8,8 @@
   --accent: #e7e9fc;
   --light: #f4f4fd;
   --white: #ffffff;
+  --main-gap: 24px;
+  --second-gap: 48px;
 }
 
 body {
@@ -37,11 +39,41 @@ button {
   cursor: pointer;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* Header */
 header {
   background-color: var(--white);
   border-bottom: 1px solid var(--accent);
-  padding: 24px 0px;
 }
 
 .top {
@@ -49,6 +81,7 @@ header {
   justify-content: space-between;
 }
 
+/* Navbar */
 nav {
   display: flex;
   flex-direction: row;
@@ -56,7 +89,7 @@ nav {
 }
 
 nav .logo {
-  padding: 0;
+  padding: 24px 0;
   margin-right: 76px;
   font-family: 'Raleway';
   font-weight: 800;
@@ -68,22 +101,27 @@ nav .logo {
   text-transform: uppercase;
   color: var(--primary-brand);
 }
-nav .logo-dark {
+.logo-dark {
   color: var(--dark);
 }
 
-nav .nav-item {
+.nav-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 40px;
 }
 
-.nav-list:active {
+.nav-item:active {
   color: var(--pressed-state);
 }
 
-nav .nav-list {
+.nav-list {
+  padding: 24px 0;
+}
+
+.nav-item {
+  padding: 24px 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -91,28 +129,34 @@ nav .nav-list {
   color: var(--dark);
 }
 
+/* Contacts */
 address {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-.contacts-item {
+.contacts-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 40px;
 }
 
-.contacts-list:active {
-  color: var(--pressed-state);
+.contacts-list {
+  padding: 24px 0;
 }
 
-.contacts-list {
+.contacts-item {
+  padding: 24px 0;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--text);
+}
+
+.contacts-item:active {
+  color: var(--pressed-state);
 }
 
 /* Hero */
@@ -166,20 +210,17 @@ button:focus {
 
 .about-us-container {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--main-gap));
 }
 
-.about-us-list {
-  display: flex;
-  flex-direction: column;
-  padding: 0px;
+.about-us-item {
   width: 264px;
-  gap: 8px;
-  justify-content: center;
+  flex-basis: calc(100% / 4 - 24px);
+  margin-right: var(--main-gap);
 }
 
-.about-us-list-title {
+.about-us-item-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -187,7 +228,7 @@ button:focus {
   color: var(--dark);
 }
 
-.about-us-list-text {
+.about-us-item-text {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
@@ -211,27 +252,24 @@ button:focus {
 
 .we-doing-container {
   display: flex;
-  border: 0;
-  justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--main-gap));
 }
 
-.we-doing-list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 360px;
+.we-doing-item {
+  width: 264px;
+  flex-basis: calc(100% / 3 - 24px);
+  margin-right: var(--main-gap);
 }
 
 /* Our Team */
-.our-team {
+.team {
   background: var(--light);
   padding-bottom: 120px;
   padding-top: 120px;
 }
 
-.our-team-title {
+.team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
@@ -242,30 +280,29 @@ button:focus {
   margin-bottom: 72px;
 }
 
-.team-cards {
+.team-container {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--main-gap));
 }
-.tcard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 0 0;
+
+.team-item {
+  width: 264px;
+  flex-basis: calc(100% / 4 - 24px);
+  margin-right: var(--main-gap);
+
   background: var(--white);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }
 
-.tcard-thumb {
-  margin-bottom: 32px;
+.team-content {
+  padding: 32px 16px;
+  text-align: center;
 }
 
-.tcard-title {
-  padding: 0;
-  margin: 0 0 8px 0;
+.team-content-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -274,9 +311,7 @@ button:focus {
   color: var(--dark);
 }
 
-.tcard-text {
-  padding: 0;
-  margin: 0 0 32px 0;
+.team-content-text {
   font-size: 16px;
   line-height: 24px;
   text-align: center;
@@ -290,7 +325,7 @@ footer {
   background: var(--dark);
 }
 
-footer p {
+.footer-text {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
@@ -315,7 +350,8 @@ footer .logo-white {
   color: var(--light);
 }
 
-/* Portfolio.html */
+/*================ Portfolio.html ==============*/
+/* Buttons */
 .filters-item {
   display: flex;
   flex-direction: row;
@@ -326,7 +362,7 @@ footer .logo-white {
   margin-bottom: 72px;
 }
 
-.filters-buttons {
+.filters-btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -355,29 +391,8 @@ button:focus {
   color: var(--white);
 }
 
-.container {
-  width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-/* CARD SET */
-.card-set {
+/* Portfolio */
+.portfolio-container {
   padding: 0;
   margin: 0;
 
@@ -387,28 +402,22 @@ button:focus {
   margin-top: -48px;
 }
 
-.card-set > .item {
+.portfolio-item {
   flex-basis: calc(100% / 3 - 24px);
   margin-left: 24px;
   margin-top: 48px;
 }
 
-/* CARD */
-.card {
+.portfolio-item-card {
   background: var(--white);
   border-bottom: 1px solid var(--accent);
 }
 
-.card-content {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-
+.portfolio-item-content {
   padding: 32px 16px;
 }
 
-.card-title {
+.portfolio-item-title {
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 20px;
@@ -419,21 +428,11 @@ button:focus {
   margin-bottom: 8px;
 }
 
-.card-text {
+.portfolio-item-text {
   font-family: 'Roboto';
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--text);
   text-align: left;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.section {
-  padding: 120px 0 120px 0px;
 }

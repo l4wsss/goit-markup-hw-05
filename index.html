@@ -26,29 +26,34 @@
               >Web <span class="logo-dark"> Studio</span>
             </a>
 
-            <ul class="nav-item">
-              <li><a href="./index.html" class="nav-list">Studio</a></li>
-              <li><a href="./portfolio.html" class="nav-list">Portfolio</a></li>
-              <li><a href="" class="nav-list">Contacts</a></li>
+            <ul class="nav-container">
+              <li class="nav-list">
+                <a href="./index.html" class="nav-item">Studio</a>
+              </li>
+              <li class="nav-list">
+                <a href="./portfolio.html" class="nav-item">Portfolio</a>
+              </li>
+              <li class="nav-list">
+                <a href="#" class="nav-item">Contacts</a>
+              </li>
             </ul>
           </nav>
 
           <address>
-            <ul class="contacts-item">
-              <li>
-                <a href="mailto:info@devstudio.com" class="contacts-list"
+            <ul class="contacts-container">
+              <li class="contacts-list">
+                <a href="mailto:info@devstudio.com" class="contacts-item"
                   >info@devstudio.com
                 </a>
               </li>
-              <li>
-                <a href="tel:+110001111111" class="contacts-list"
+              <li class="contacts-list">
+                <a href="tel:+110001111111" class="contacts-item"
                   >+11 (000) 111-11-11
                 </a>
               </li>
             </ul>
           </address>
         </div>
-      </div>
     </header>
 
     <!-- Main -->
@@ -68,30 +73,30 @@
         <div class="container">
           <h2 class="visually-hidden">About us</h2>
           <ul class="about-us-container">
-            <li class="about-us-list">
-              <h3 class="about-us-list-title">Strategy</h3>
-              <p class="about-us-list-text">
+            <li class="about-us-item">
+              <h3 class="about-us-item-title">Strategy</h3>
+              <p class="about-us-item-text">
                 Our goal is to identify the business problem to walk away with
                 the perfect and creative solution.
               </p>
             </li>
-            <li class="about-us-list">
-              <h3 class="about-us-list-title">Punctuality</h3>
-              <p class="about-us-list-text">
+            <li class="about-us-item">
+              <h3 class="about-us-item-title">Punctuality</h3>
+              <p class="about-us-item-text">
                 Bring the key message to the brand's audience for the best price
                 within the shortest possible time.
               </p>
             </li>
-            <li class="about-us-list">
-              <h3 class="about-us-list-title">Diligence</h3>
-              <p class="about-us-list-text">
+            <li class="about-us-item">
+              <h3 class="about-us-item-title">Diligence</h3>
+              <p class="about-us-item-text">
                 Research and confirm brands that present the strongest digital
                 growth opportunities and minimize risk.
               </p>
             </li>
-            <li class="about-us-list">
-              <h3 class="about-us-list-title">Technologies</h3>
-              <p class="about-us-list-text">
+            <li class="about-us-item">
+              <h3 class="about-us-item-title">Technologies</h3>
+              <p class="about-us-item-text">
                 Design practice focused on digital experiences. We bring forth a
                 deep passion for problem-solving.
               </p>
@@ -105,7 +110,7 @@
         <div class="container">
           <h2 class="we-doing-title">What are we doing</h2>
           <ul class="we-doing-container">
-            <li class="we-doing-list">
+            <li class="we-doing-item">
               <img
                 src="./images/desktop.jpg"
                 alt="desktop"
@@ -113,7 +118,7 @@
                 height="300"
               />
             </li>
-            <li class="we-doing-list">
+            <li class="we-doing-item">
               <img
                 src="./images/phone.jpg"
                 alt="phone"
@@ -121,7 +126,7 @@
                 height="300"
               />
             </li>
-            <li class="we-doing-list">
+            <li class="we-doing-item">
               <img
                 src="./images/desktop&phone.jpg"
                 alt="desktop and phone"
@@ -134,50 +139,58 @@
       </section>
 
       <!-- Our Team -->
-      <section class="our-team">
+      <section class="team">
         <div class="container">
-          <h2 class="our-team-title">Our Team</h2>
+          <h2 class="team-title">Our Team</h2>
 
-          <ul class="team-cards">
-            <li class="tcard">
-              <div class="tcard-thumb">
+          <ul class="team-container">
+            <li class="team-item">
+              <div class="team-thumb">
                 <img
                   src="./images/Mark-Guerrero.jpg"
                   alt="Mark Guerrero"
                   width="264"
                 />
               </div>
-              <h3 class="tcard-title">Mark Guerrero</h3>
-              <p class="tcard-text">Product Designer</p>
+              <div class="team-content">
+                <h3 class="tcard-title">Mark Guerrero</h3>
+                <p class="tcard-text">Product Designer</p>
+              </div>
             </li>
-            <li class="tcard">
-              <div class="tcard-thumb">
+            <li class="team-item">
+              <div class="team-thumb">
                 <img src="./images/Tom-Ford.jpg" alt="Tom Ford" width="264" />
               </div>
-              <h3 class="tcard-title">Tom Ford</h3>
-              <p class="tcard-text">Frontend Developer</p>
+              <div class="team-content">
+                <h3 class="tcard-title">Tom Ford</h3>
+                <p class="tcard-text">Frontend Developer</p>
+              </div>
             </li>
-            <li class="tcard">
-              <div class="tcard-thumb">
+            <li class="team-item">
+              <div class="team-thumb">
                 <img
                   src="./images/Camila-Garcia.jpg"
                   alt="Camila Garcia"
                   width="264"
                 />
               </div>
-              <h3 class="tcard-title">Camila Garcia</h3>
-              <p class="tcard-text">Marketing</p>
+              <div class="team-content">
+                <h3 class="tcard-title">Camila Garcia</h3>
+                <p class="tcard-text">Marketing</p>
+              </div>
             </li>
-            <li class="tcard">
-              <div class="tcard-thumb">
+            <li class="team-item">
+              <div class="team-thumb">
                 <img
                   src="./images/Daniel-Wilson.jpg"
                   alt="Daniel Wilson"
                   width="264"
                 />
               </div>
-              <h3 class="tcard-title">Daniel Wilson</h3>
-              <p class="tcard-text">UI Designer</p>
+              <div class="team-content">
+                <h3 class="tcard-title">Daniel Wilson</h3>
+                <p class="tcard-text">UI Designer</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -188,7 +201,7 @@
         <a href="./index.html" class="logo">
           Web <span class="logo-white"> Studio</span>
         </a>
-        <p>
+        <p class="footer-text">
           Increase the flow of customers and sales for your business with
           digital marketing & growth solutions.
         </p>
