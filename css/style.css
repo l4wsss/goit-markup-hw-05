@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: 'Roboto', 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: var(--white);
 }
 
@@ -114,7 +114,7 @@ nav {
 }
 
 .nav-item:hover,
-.nav-item:focus {
+.nav-item:active {
   color: var(--pressed-state);
 }
 
@@ -195,7 +195,6 @@ address {
   margin: 0 auto;
   border: 0;
   /* text */
-  font-family: 'Roboto';
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -553,12 +552,9 @@ button:focus {
   row-gap: var(--second-gap);
 }
 
-.portfolio-item {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-}
-
 .portfolio-item-card {
   background: var(--white);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-content {
@@ -569,7 +565,6 @@ button:focus {
 }
 
 .portfolio-item-title {
-  font-family: 'Roboto';
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -580,7 +575,6 @@ button:focus {
 }
 
 .portfolio-item-text {
-  font-family: 'Roboto';
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
@@ -588,7 +582,7 @@ button:focus {
   text-align: left;
 }
 
-.portfolio-item:hover {
+.portfolio-item-card:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
