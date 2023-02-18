@@ -175,7 +175,9 @@ address {
     url(../images/people-office.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -229,8 +231,8 @@ button:focus {
   justify-content: center;
   background-color: var(--light);
   border-radius: 4px;
-  padding: 24px 100px;
-  margin-bottom: 8px;
+  width: 264px;
+  height: 112px;
 }
 
 .about-us-icon {
@@ -540,6 +542,7 @@ button:focus {
   background: var(--pressed-state);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--pressed-state);
   color: var(--white);
 }
 
@@ -554,7 +557,6 @@ button:focus {
 
 .portfolio-item-card {
   background: var(--white);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-content {
@@ -582,7 +584,14 @@ button:focus {
   text-align: left;
 }
 
-.portfolio-item-card:hover {
+.portfolio-item:hover,
+.portfolio-item:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
+/* .portfolio-item-card:hover,
+.portfolio-item-card:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+} */
