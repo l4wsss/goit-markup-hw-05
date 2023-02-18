@@ -118,6 +118,18 @@ nav {
   color: var(--pressed-state);
 }
 
+.nav-item:hover::after,
+.nav-item:active::after {
+  display: block;
+  content: '';
+  background-color: #404bbf;
+  border-radius: 2px;
+  margin-top: 20px;
+  width: auto;
+  height: 4px;
+  margin-bottom: -24px;
+}
+
 .nav-list {
   padding: 24px 0;
 }
