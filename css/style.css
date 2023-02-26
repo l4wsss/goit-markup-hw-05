@@ -10,6 +10,8 @@
   --white: #ffffff;
   --main-gap: 24px;
   --second-gap: 48px;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 250ms;
 }
 
 body {
@@ -72,7 +74,7 @@ img {
 }
 
 /* Header */
-header {
+.header {
   background-color: var(--white);
   border-bottom: 1px solid var(--accent);
 }
@@ -113,34 +115,46 @@ nav {
   gap: 40px;
 }
 
-.nav-item:hover,
-.nav-item:active {
-  color: var(--pressed-state);
-}
-
-.nav-item:hover::after,
-.nav-item:active::after {
-  display: block;
-  content: '';
-  background-color: #404bbf;
-  border-radius: 2px;
-  margin-top: 20px;
-  width: auto;
-  height: 4px;
-  margin-bottom: -24px;
-}
-
-.nav-list {
-  padding: 24px 0;
-}
-
 .nav-item {
+  position: relative;
+  display: block;
   padding: 24px 0;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--dark);
+
+  transition: color var(--duration) var(--timing-function);
+}
+
+.nav-item:hover,
+.nav-item:active {
+  color: var(--pressed-state);
+}
+
+.studio::after {
+  position: absolute;
+  display: block;
+  content: '';
+  background-color: var(--pressed-state);
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.portfolio::after {
+  position: absolute;
+  display: block;
+  content: '';
+  background-color: var(--pressed-state);
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
 }
 
 /* Contacts */
@@ -168,6 +182,8 @@ address {
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--text);
+
+  transition: color var(--duration) var(--timing-function);
 }
 
 .contacts-item:hover,
@@ -214,13 +230,15 @@ address {
   line-height: 24px;
   letter-spacing: 0.04em;
   color: var(--white);
+
+  transition: background-color var(--duration) var(--timing-function),
+    box-shadow var(--duration) var(--timing-function);
 }
 
-.hero button:hover,
-button:focus {
-  background: var(--pressed-state);
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: var(--pressed-state);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
 }
 
 /* About us */
@@ -374,6 +392,8 @@ button:focus {
   background: #4d5ae5;
   border-radius: 50%;
   fill: var(--light);
+
+  transition: background-color var(--duration) var(--timing-function);
 }
 
 .team-socials-icon {
@@ -424,6 +444,9 @@ button:focus {
   fill: var(--subtle-text);
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
+
+  transition: border var(--duration) var(--timing-function),
+    fill var(--duration) var(--timing-function);
 }
 
 .customers-icon {
@@ -507,6 +530,8 @@ footer {
   fill: var(--light);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: background-color var(--duration) var(--timing-function);
 }
 
 .footer-socials-icon {
@@ -547,11 +572,16 @@ footer {
   text-align: center;
   letter-spacing: 0.04em;
   color: var(--primary-brand);
+
+  transition: border var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function),
+    box-shadow var(--duration) var(--timing-function),
+    color var(--duration) var(--timing-function);
 }
 
-.filters-item button:hover,
-button:focus {
-  background: var(--pressed-state);
+.filters-btn:hover,
+.filters-btn:focus {
+  background-color: var(--pressed-state);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border: 1px solid var(--pressed-state);
@@ -568,7 +598,46 @@ button:focus {
 }
 
 .portfolio-item-card {
+  display: block;
   background: var(--white);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  transition: box-shadow var(--duration) var(--timing-function);
+}
+
+.portfolio-item-card:hover,
+.portfolio-item-card:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-item-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item-overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-brand);
+
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 0 32px;
+  padding-top: 40px;
+
+  transform: translateY(100%);
+  transition: transform var(--duration) var(--timing-function);
+}
+
+.portfolio-item-card:hover .portfolio-item-overlay {
+  transform: translateY(0);
 }
 
 .portfolio-item-content {
@@ -596,14 +665,70 @@ button:focus {
   text-align: left;
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 1;
+  transition: opacity var(--duration) var(--timing-function);
 }
 
-/* .portfolio-item-card:hover,
-.portfolio-item-card:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-} */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.modal {
+  position: absolute;
+  width: 408px;
+  height: 576px;
+  top: 50%;
+  left: 50%;
+  visibility: visible;
+
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--duration) var(--timing-function);
+}
+
+.modal-btn {
+  display: flex;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  fill: #000000;
+}
+
+.modal-icon {
+  width: 8px;
+  height: 8px;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #404bbf;
+  fill: #ffffff;
+}

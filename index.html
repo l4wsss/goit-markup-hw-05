@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container">
         <div class="top">
           <nav>
@@ -28,7 +28,7 @@
 
             <ul class="nav-container">
               <li class="nav-list">
-                <a href="./index.html" class="nav-item">Studio</a>
+                <a href="./index.html" class="nav-item studio">Studio</a>
               </li>
               <li class="nav-list">
                 <a href="./portfolio.html" class="nav-item">Portfolio</a>
@@ -66,7 +66,9 @@
             Effective Solutions <br />
             for Your Business
           </h1>
-          <button type="button" class="hero-btn">Order Service</button>
+          <button type="button" class="hero-btn" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
 
@@ -439,5 +441,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- Backdrop -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-btn" data-modal-close>
+          <svg class="modal-icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
